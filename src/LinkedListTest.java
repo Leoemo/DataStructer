@@ -24,8 +24,29 @@ public class LinkedListTest {
         linkedListTest.deleteUserById(1);
         linkedListTest.showUserById();
 
-        linkedListTest.addUserById(node1);
+        linkedListTest.reverseLinkedList();
         linkedListTest.showUserById();
+    }
+
+    public void reverseLinkedList(){
+        USerNode temp = headNode;
+        USerNode current = headNode.next;
+        USerNode next = null;
+        USerNode localHeadNode = new USerNode(0, null, 0,null);
+
+        if(headNode.next ==null || headNode.next.next ==null){
+            System.out.println("链表不需要反转");
+            return;
+        }
+        while(current != null){
+            next = current.next;
+            current.next = localHeadNode.next;
+            localHeadNode.next = current;
+            current = next;
+
+        }
+        System.out.println("反转成功");
+        headNode.next = localHeadNode.next;
     }
 
     public void deleteUserById(int id){
