@@ -1,6 +1,7 @@
 public class LinkedListTest {
 
     USerNode headNode = new USerNode(0, null, 0, null);
+    USerNode headNodeForCycle = new USerNode(0, null, 0,null);
 
     public static void main(String[] args) {
         USerNode node1 = new USerNode(1, "Hy", 23);
@@ -121,8 +122,6 @@ public class LinkedListTest {
             temp = temp.next;
         }
         temp.next = uSerNode;
-
-
     }
 
     private boolean isEmpty() {
