@@ -8,9 +8,9 @@ public class RadixSort {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = random.nextInt(arr.length);
         }
-      //  showArr(arr, 50);
+        //  showArr(arr, 50);
         radixSort(arr);
-       // showArr(arr, 50);
+        // showArr(arr, 50);
 
     }
 
@@ -47,9 +47,9 @@ public class RadixSort {
         }
     }
 
-    public static void showArr(int[] arr,int length){
-        for(int i=0;i<length;i++){
-            System.out.print(arr[i]+" ");
+    public static void showArr(int[] arr, int length) {
+        for (int i = 0; i < length; i++) {
+            System.out.print(arr[i] + " ");
         }
         System.out.println();
     }
