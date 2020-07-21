@@ -16,14 +16,36 @@ public class addSortedLink {
         n4.next = n5;//2->3->9
         n5.next = n6;
 
-        Node solve = solve(n1, n4);
+//        Node solve = solve(n1, n4);
+//
+//
+//        while (solve != null) {
+//            System.out.print(solve.val + "->");
+//            solve = solve.next;
+//        }
 
-        while (solve != null) {
-            System.out.print(solve.val + "->");
-            solve = solve.next;
+        Node node = solve1(n1, n4);
+        while (node != null) {
+            System.out.print(node.val + "->");
+            node = node.next;
         }
     }
 
+    //递归方法实现
+    public static Node solve1(Node n1,Node n2){
+        if(n1 == null)
+            return n2;
+        if(n2 == null)
+            return n1;
+        if(n1.val <= n2.val){
+            n1.next = solve1(n1.next, n2);
+            return n1;
+        } else {
+            n2.next = solve1(n1,n2.next);
+            return n2;
+        }
+    }
+    //循环方法实现
     public static Node solve(Node r1, Node r2) {
         Node dumb = new Node(0);
         Node head = dumb;
